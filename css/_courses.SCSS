@@ -1,0 +1,86 @@
+
+.courses {
+    .box-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 2rem;
+
+        .box {
+            &:hover .image img {
+                transform: scale(1.1);
+            }
+
+            .image {
+                height: 25rem;
+                overflow: hidden;
+                position: relative;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    -o-object-fit: cover;
+                    object-fit: cover;
+                }
+
+                h3 {
+                    font-size: 1.5rem;
+                    text-transform: capitalize;
+                    color: $black;
+                    position: absolute;
+                    top: 1rem;
+                    left: 1rem;
+                    padding: 0.5rem 1.5rem;
+                    background: $white;
+                }
+            }
+
+            .content {
+                padding: 2rem;
+                text-align: center;
+                border: 0.1rem solid $green;
+
+                h3 {
+                    font-size: 2rem;
+                    text-transform: capitalize;
+                    color: $black;
+                }
+
+                p {
+                    padding: 1rem 0;
+                    font-size: 1.6rem;
+                    line-height: 2;
+                    color: $light-color;
+                }
+
+                .icons {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-top: 2rem;
+                    padding-top: 2rem;
+                    border-top: 0.1rem solid $green;
+
+                    span {
+                        font-size: 1.5rem;
+                        text-transform: capitalize;
+                        color: $black;
+
+                        i {
+                            color: $green;
+                            padding-right: 0.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .load-more {
+        margin-top: 2rem;
+        text-align: center;
+    }
+}
+
+.hide {
+    display: none;
+}

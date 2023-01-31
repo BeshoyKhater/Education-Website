@@ -1,0 +1,451 @@
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: $white;
+    box-shadow: $box-shadow;
+    padding: 2rem 10%;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+
+    .logo {
+        margin-right: auto;
+        @include titleText(2.5rem);
+        font-weight: bolder;
+
+        i {
+            color:$green;
+            margin-right: .8rem;
+        }
+    }
+
+    .navbar {
+        a {
+            margin-right: 2rem;
+            @include titleText(2rem);
+        
+            &:hover {
+                color: $green;
+            }
+        } 
+    }
+    
+
+
+    .icons {
+        display: flex;
+
+        #close-navbar {
+            font-size: 4rem;
+            cursor: pointer;
+            color: $black;
+            display: none;
+            z-index: 1202;
+                
+            &:hover {
+                transform: rotate(90deg);
+                }
+            }
+    }
+
+    .icons div {
+        cursor: pointer;
+        font-size: 2.5rem;
+        color: $black;
+        margin-left: 1.5rem;
+
+        &:hover {
+            color: $green;
+        }
+    }
+
+    #menu-btn {
+        display: none;
+    }
+}
+// ===================== Account-Form ===============
+    .account-form {
+        position: fixed;
+        top: 0;
+        right: -105%;
+        width: 35rem;
+        background: $white;
+        display: flex;
+        flex-flow: column;
+        text-align: center;
+        justify-content: center;
+        height: 100%;
+        gap: 2rem;
+        z-index: 1200;
+        transition: all 1s ease;
+
+        &.active {
+            right: 0;
+            box-shadow: 0 0 0 100vw rgba(0, 0, 0, .8);
+        }
+
+        #close-form {
+            position: absolute;
+            top: 2rem;
+            right: 3rem;
+            font-size: 5rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: $black;
+
+            &:hover {
+                transform: rotate(90deg);
+            }
+        }
+
+        .buttons {
+            .active {
+                background: $green;
+                color: $white;
+            }
+            span {
+                margin: 0 .5rem;
+            }
+        }
+
+
+
+        form {
+            border: $border;
+            margin: 0 2rem;
+            padding: 2rem;
+            display: none;
+
+            &.active {
+                display: block;
+            }
+
+            h3 {
+                font-size: 2.5rem;
+                color: $black;
+                margin-bottom: 1rem;
+            }
+
+            .box {
+                width: 100%;
+                border: $border;
+                padding: 1rem 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .check {
+                display: flex;
+                align-items: center;
+                margin-bottom: 1.5rem;
+                margin-top: .5rem;
+                
+                label {
+                    font-size: 1.5rem;
+                    margin-left:0.5rem;
+                    color: $black;
+                }
+
+                a {
+                    margin-left:auto;
+                    font-size: 1.5rem;
+                    color: $black;
+
+                    &:hover {
+                        color: $green;
+                        text-decoration: underline;
+                    }
+
+                }
+            }
+
+            input[type=submit] {
+                width: 100%;
+            }
+        }
+    }
+// ===================== SLIDER ===============
+.home {
+    padding: 0;
+
+    .slider {
+        display: flex;
+        align-items: center;
+        height: 50rem;
+        background-size: cover !important;
+        background-position: center !important;
+
+        .content {
+            width: 50rem;
+
+            h3 {
+                @include titleText(5.5rem);
+                color: $white;
+            }
+
+            p {
+                @include garphText(1.6rem);
+                color: $light-white;
+                padding: 1rem 0;
+            }
+        }
+    }
+
+    .swiper-pagination-bullet {
+        background-color: $green;
+    }
+}
+// ===================== Subjects ===============
+.subjects {
+    .box-container {
+        @include grid(16rem);
+
+        .box {
+            padding: 3rem 2rem ;
+            text-align: center;
+            border: $border;
+            background: $light-green;
+            cursor: pointer;
+
+            &:hover {
+                background: $green;
+
+                h3 {
+                    color: $white;
+                }
+
+                p {
+                    color: $light-white;
+                }
+            }
+
+            img {
+                height: 10rem;
+                margin-bottom: .5rem;
+            }
+
+            h3 {
+                @include titleText(1.7rem);
+                padding: .5rem 0;
+            }
+
+            p {
+                @include garphText(1.7rem)
+            }
+        }
+    }
+}
+// ===================== Courses Slider ===============
+.home-courses {
+    .slide {
+        text-align: center;
+        position: relative;
+        width: 30rem;
+        background: $light-green;
+        overflow: hidden;
+
+        &:hover .content{
+            bottom: 0;
+        }
+
+        .image {
+            padding: 2rem;
+
+            img {
+                width: 100%;
+                margin-bottom: 1.5rem;
+            }
+
+            h3 {
+                @include titleText(2rem)
+            }
+        }
+
+        .content {
+            position: absolute;
+            bottom: -105%;
+            right: 0;
+            left: 0;
+            background: $green;
+            padding: 2rem 3rem;
+            transition: all 1s ease;
+
+            h3 {
+                @include titleText(2rem);
+                color: $white;
+            }
+
+            p {
+                padding: 1rem 0;
+                @include garphText(1.4rem);
+                color: $light-white;
+            }
+
+            .btn:hover {
+                background: $black;
+            }
+        }
+    }
+}
+// ===================== FOOTER ===============
+.footer {
+    background: $light-green;
+
+    .box-container {
+        @include grid(25rem);
+
+        .box {
+            h3 {
+                @include titleText(2.2rem);
+                padding: 1rem 0;
+
+                i {
+                    color: $green;
+                    padding-right: 8px;
+                }
+            }
+
+            .share {
+                margin-top: 1rem;
+
+                i {
+                    height:4.5rem;
+                    width:4.5rem;
+                    line-height:4.5rem;
+                    font-size:1.7rem;
+                    background-color: $green;
+                    color: $white;
+                    margin-right: .3rem;
+                    text-align: center;
+                    border-radius: 1rem;
+
+                    &:hover {
+                        background-color: $black;
+                    }
+                }
+            }
+
+            .link {
+                @include garphText(1.7rem);
+                padding: .5rem 0;
+                display: block;
+
+                &:hover  {
+                    color: $green;
+                    text-decoration: underline;
+                }
+            }
+
+            p {
+                @include garphText(1.5rem);
+                padding: 1rem 0;
+            }
+
+            .email {
+                width: 100%;
+                padding: 1.2rem 1.4rem;
+                font-size: 1.6rem;
+                border: $border;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    .credit {
+        text-align: center;
+        margin-top: 3rem;
+        padding-top: 3rem;
+        @include titleText(2rem);
+        border-top: $border;
+
+        span {
+            color: $green;
+        }
+    }
+}
+
+
+
+
+
+// ============== Media Qureies===========
+@media (max-width:1199px) {
+    header {
+        padding: 2rem 5%;
+    }
+    section {
+        padding: 3rem 5%;
+    }
+}
+
+@media (max-width:991px) {
+    html {
+        font-size: 55%;
+    }
+    .header {
+        padding: 2rem;
+    }
+    section {
+        padding: 3rem 2rem;
+    }
+}
+
+@media (max-width:768px) {
+    header {
+        .navbar {
+            position: fixed;
+            top: 0;
+            right: -105%;
+            width: 30rem;
+            background: $white;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 1200;
+            transition: all 400m ease;
+
+            #close-navbar {
+                display: inline-block;
+            }
+            &.active {
+                box-shadow: 0 0 0 100vw rgba(0,0,0,.8);
+                right: 0%;
+            }
+            a {
+                display:block;
+                font-size: 3rem !important;
+                margin: 1rem 0;
+                text-align: center;
+                font-weight: bold;
+            }
+        }
+        .icons {
+            #menu-btn {
+                display: inline-block;
+            }
+        }
+    }
+
+    .footer {
+        text-align: center;
+    }
+    .home .slider .content h3 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width:450px) {
+    html {
+        font-size:50%;
+    }
+
+    .heading {
+        font-size: 3rem;
+    }
+
+    .about .content .about-title {
+        font-size: 4rem;
+    }
+}

@@ -1,0 +1,160 @@
+.about {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+
+    .image {
+        flex:1 1 40rem;
+
+        img{
+            width: 100%;
+        }
+    }
+
+    .about-info {
+        flex: 1 1 40rem;
+
+        h3 {
+            @include titleText(3rem);
+        }
+
+        p {
+            @include garphText(1.5rem);
+            padding: 1rem 0;
+        }
+
+        .about-icons {
+            margin-top: 1rem;
+            @include grid(16rem);
+
+            article {
+                border: $border;
+                padding:3rem 2rem;
+                background: $light-green;
+                text-align: center;
+
+                img {
+                    height: 5rem;
+                    margin-bottom: .5rem;
+                }
+
+                h2 {
+                    padding: .5rem 0;
+                    @include titleText(3rem)
+                }
+            }
+        }
+    }
+}
+
+
+.teachers {
+    .slide {
+        text-align: center;
+
+        &:hover .image img {
+            background: $green;
+        }
+
+        &:hover .image .share {
+            bottom: 0;
+        }
+
+        .image {
+            position: relative;
+            overflow: hidden;
+
+            img {
+                background: $light-green;
+                width: 100%;
+            }
+
+            .share {
+                position: absolute;
+                bottom: -10rem;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.8);
+                padding: 2rem;
+
+                a {
+                    font-size: 3rem;
+                    margin: 0 1rem;
+                    color: $white;
+
+                    &:hover {
+                        color: $green;
+                    }
+                }
+            }
+        }
+
+        .content {
+            display: flex;
+            padding-top: 1rem;
+            align-items: center;
+            justify-content: space-between;
+    
+            h3 {
+                font-size: 2rem;
+                text-transform: capitalize;
+                color: $black;
+            }
+    
+            span {
+                font-size: 1.5rem;
+                line-height: 2;
+                color: $light-color;
+            }
+        }
+    }
+}
+
+.reviews {
+    .slide {
+        text-align: center;
+
+        p {
+            font-size: 1.5rem;
+            line-height: 2;
+            color: $light-color;
+            position: relative;
+            background: #f0fdfa;
+            border: 0.1rem solid $green;
+            margin-bottom: 3rem;
+            padding: 2rem;
+
+            ::before {
+                content: "";
+                position: absolute;
+                bottom: -1.2rem;
+                left: 50%;
+                transform: translateX(-50%) rotate(45deg);
+                background: $light-green;
+                border-bottom: 0.1rem solid $green;
+                border-right: 0.1rem solid $green;
+                height: 2rem;
+                width: 2rem;
+            }
+        }
+
+        img {
+            height: 7rem;
+            width: 7rem;
+            border-radius: 50%;
+        }
+
+        h3 {
+            font-size: 2.2rem;
+            text-transform: capitalize;
+            color: $black ;
+            padding: 0.5rem 0;
+        }
+
+        .stars {
+            font-size: 1.2rem;
+            color: $green;
+        }
+    }
+}
